@@ -1,0 +1,27 @@
+// 1. Increasing specificity because our CSS minifier doesn't allow us to redefine the line-height
+// 2. GEL Won't update the spec/code so we have to override the line-height due to issue in Windows.
+
+
+// Common Imports
+@import '../bower_components/sass-mq/mq';
+
+// GEL Settings
+$gel-namespace: 'mwt-';
+$gel-type-namespace: 'mwt-';
+$gel-breakpoint-prefix: 'mwt-bp-' !default;
+$gel-type-touch-class: 'feature-no-touch' !default;
+$gel-type-enable--font-family: false !default;
+$gel-type-enable--markup-output: true !default;
+
+$gel-layout-enable--box-sizing: true !default;
+
+$gel-grid-enable--markup-output: true;
+
+// GEL Imports
+@import '../bower_components/gel-sass-tools/sass-tools';
+@import '../bower_components/gel-grid/grid';
+@import '../bower_components/gel-typography/typography';
+
+.#{$gel-type-namespace}minion { // [1]
+  line-height: rem(17px); // [2]
+}

@@ -1,0 +1,5 @@
+@import '../settings';
+
+@function mwt-spacing($spacing-unit) {
+  @return map-get($mwt-spacing, $spacing-unit);
+}

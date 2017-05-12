@@ -1,0 +1,11 @@
+{% if site.charitycommission %}
+<p class="mwt-charitycommission-info">{{ site.title }} is a UK registered charity</p>
+<ul class="mwt-charitycommission-info__items">
+	<li class="mwt-charitycommission-info__item">
+		<a class="mwt-charitycommission-info__link" href="http://beta.charitycommission.gov.uk/charity-details/?regid={{ site.charitycommission.charityNo }}&subid=0">Charity no. {{ site.charitycommission.charityNo }}</a>
+	</li>
+	<li class="mwt-charitycommission-info__item">
+		<a class="mwt-charitycommission-info__link" href="http://beta.charitycommission.gov.uk/charity-details/?regid={{ site.charitycommission.charityNo }}&subid=0">Company no. {{ site.charitycommission.companyNo }}</a>
+	</li>
+</ul>
+{% endif %}

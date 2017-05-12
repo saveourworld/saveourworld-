@@ -1,0 +1,35 @@
+.mwt-how-to-donate {
+    background: #8f646c;
+    padding: mwt-spacing(double-spacing-unit) mwt-spacing(base-spacing-unit);
+    text-align: left;
+}
+
+.mwt-how-to-donate-header__title {
+    @include gel-typography( 'double-pica');
+    color: #FFFFFF;
+}
+
+.mwt-how-to-donate-details__title {
+    @include gel-typography( 'great-primer');
+    color: #FFFFFF;
+}
+
+.mwt-how-to-donate-details,
+.mwt-how-to-donate-header__memo {
+    color: #f3eeef;
+}
+
+.mwt-how-to-donate-header__memo {
+    padding-bottom: mwt-spacing(base-spacing-unit);
+}
+
+.mwt-how-to-donate-details__bank-account {
+    list-style: none;
+    padding-left: 16px;
+}
+
+.mwt-how-to-donate-footer__memo {
+    @include gel-typography( 'brevier');
+    text-align: left;
+    color: #ded0d3;
+}

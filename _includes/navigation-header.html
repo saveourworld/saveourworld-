@@ -1,0 +1,20 @@
+{% if site.navigation.header %}
+<div class="mwt-site-header-nav">
+  <nav id="site-nav" class="mwt-site-header-nav-menu">
+    <ul class="mwt-header-nav">
+      {% for nav in site.navigation.header %}
+        {% include navigation-header-link.html %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="main-header mwt-site-header-nav__control">
+    <a href="#site-nav" class="mwt-site-header-nav__control-open">
+      {% include icons/menu-icon-open.svg %}
+    </a>
+    <a href="#" class="mwt-site-header-nav__control-close">
+      {% include icons/menu-icon-close.svg %}
+    </a>
+  </div>
+</div>
+{% endif %}

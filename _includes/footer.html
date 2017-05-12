@@ -1,0 +1,19 @@
+<section class="mwt-module mwt-site-footer">
+  <div class="mwt-module__content">
+
+    <div class="mwt-layout">
+
+      <div class="mwt-site-footer__column mwt-site-footer__column--info mwt-layout__item">
+        <h2 class="footer-heading">{{ site.title }}</h2>
+        <p>{{ site.description }}</p>
+        {% include charity-commission.html %}
+      </div>
+
+      <div class="mwt-site-footer__column mwt-site-footer__column--addresses mwt-layout__item">
+         {% include contacts.html %}
+      </div>
+
+    </div>
+
+  </div>
+</section>

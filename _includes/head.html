@@ -1,0 +1,36 @@
+{% capture title %}{% if page.title %}{{ page.title | strip }} - {{ site.title | strip }}{% else %}{{ site.title | strip }}{% endif %}{% endcapture %}
+{% capture canonical_url %}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+{% capture meta_description %}{% if page.meta-description %}{{ page.meta-description | strip_html | strip_newlines | strip | truncate: 160 }}{% else %}{{ site.description | strip_html | strip_newlines | strip | truncate: 160 }}{% endif %}{% endcapture %}
+{% capture meta_keywords %}{% if page.meta-keywords %}{{ page.meta-keywords | strip_html | strip_newlines | strip | truncate: 160 }}{% else %}{{ site.keywords | strip_html | strip_newlines | strip | truncate: 160 }}{% endif %}{% endcapture %}
+
+{% capture og_type %}{% if page.url == '/' %}website{% else %}article{% endif %}{% endcapture %}
+{% capture og_title %}{% if page.title %}{{ page.title | strip }}{% else %}{{ site.title | strip }}{% endif %}{% endcapture %}
+{% capture og_image %}{% if page.images %}{{ page.images.large | prepend: site.baseurl | prepend: site.url }}{% else %}{{ '/assets/images/mwt-logo-icon.svg' | prepend: site.baseurl | prepend: site.url }}{% endif %}{% endcapture %}
+{% capture og_description %}{% if page.meta-description %}{{ page.meta-description | strip_html | strip }}{% else %}{{ site.description | strip_html | strip_newlines | strip }}{% endif %}{% endcapture %}
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ meta_description }}">
+  <meta name="keywords" content="{{ meta_keywords }}">
+
+  <meta property="og:url"                content="{{ canonical_url }}" />
+  <meta property="og:type"               content="{{ og_type }}" />
+  <meta property="og:title"              content="{{ og_title }}" />
+  <meta property="og:description"        content="{{ og_description }}" />
+  <meta property="og:image"              content="{{ og_image }}" />
+
+  {% if jekyll.environment == "development" %}
+     {% capture stylesheet %}/assets/css/main.css?{{site.time | date: '%s'}}{% endcapture %}
+     <link rel="stylesheet" href="{{ stylesheet | prepend: site.baseurl }}">
+  {% else %}
+    {% capture stylesheet %}{% include stylesheet.scss %}{% endcapture %}
+    <style type="text/css">{{ stylesheet | scssify }}</style>
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+</head>

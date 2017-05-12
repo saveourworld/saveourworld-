@@ -1,0 +1,32 @@
+@mixin mwt-shape-love ($size: 20px, $color:rgba(250,184,66, 1)) {
+  position: relative;
+  width: $size;
+  height: $size;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: $color;
+
+  &:before,
+  &:after{
+      position: absolute;
+      width: $size;
+      height: $size;
+      content: '';
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;
+      background-color: $color;
+  }
+  &:before{
+      bottom: 0px;
+      left: -($size / 2);
+  }
+  &:after{
+      top: -($size / 2);
+      right: 0px;
+  }
+}

@@ -1,0 +1,58 @@
+<section class="mwt-module mwt-featured-slider">
+  <div class="mwt-module__content">
+    <!-- <header class="mwt-featured-slider-header"> -->
+      <!-- <h2>Featured Content</h2> -->
+    <!-- </header> -->
+
+    <div class="mwt-featured-slider__gallery gallery autoplay items-{{ site.data.slides | size }}">
+      <!-- small, medium, large -->
+      <!-- 400px, 600px, 900px -->
+      {% for slide in site.heros %}
+
+       {% capture hero_image %}
+        #{{ slide.category | downcase }}-{{ forloop.index }} .mwt-slider__slide-image {
+          background-image: url({{ slide.images.small }});
+        }
+        @media only screen and (min-width: 400px) and (max-width: 599px) {
+         #{{ slide.category | downcase }}-{{ forloop.index }} .mwt-slider__slide-image {
+           background-image: url({{ slide.images.medium }});
+         }
+        }
+        @media only screen and (min-width: 600px) {
+         #{{ slide.category | downcase }}-{{ forloop.index }} .mwt-slider__slide-image {
+           background-image: url({{ slide.images.large }});
+         }
+        }
+       {% endcapture %}
+       <style>{{ hero_image }}</style>
+
+      <figure id="{{ slide.category | downcase }}-{{ forloop.index }}" class="mwt-slider__slide item">
+
+        <a class="mwt-slider__slide-link" href="{{ slide.url }}">
+
+          <div class="mwt-slider__slide-image"></div>
+
+          <!-- <img class="mwt-slider__slide-image" src="{{ slide.images.small }}" srcset="{{ slide.images.medium }} 1000w, {{ slide.images.large }} 2000w" alt="{{ slide.category }} - {{ slide.title }}"> -->
+          <div class="mwt-slider__slide-meta">
+            <div class="mwt-slider__slide--info">
+              <h3 class="mwt-slider__slide--info-category">{{ slide.category }}</h3>
+              <span class="mwt-slider__slide--info-details">{{ slide.title }}</span>
+            </div>
+          </div>
+        </a>
+
+      </figure>
+      {% endfor %}
+
+      <div class="mwt-slider__slide--controls controls">
+        {% for slide in site.heros %}
+        <span class="mwt-slider__slide--controls-btns control-button"></span>
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </div>
+
+
+</section>

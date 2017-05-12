@@ -1,0 +1,66 @@
+.mwt-contact-us-form {
+  padding-top: mwt-spacing(base-spacing-unit);
+  padding-bottom: mwt-spacing(base-spacing-unit);
+}
+
+.mwt-contact-us-form__hide {
+  display: none;
+}
+
+.mwt-contact-us-form__field-wrapper {
+  padding-top: mwt-spacing(base-spacing-unit);
+  display: inline-block;
+}
+
+.mwt-contact-us-form__field-wrapper input,
+.mwt-contact-us-form__field-wrapper textarea,
+.mwt-contact-us-form__field-wrapper button {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  height: $size-of-human-thumb;
+  padding: mwt-spacing(half-spacing-unit)
+}
+
+.mwt-contact-us-form__field-wrapper textarea {
+    padding: 3px 5px;
+    resize: vertical;
+    max-height:300px;
+    min-height:100px;
+}
+
+.mwt-contact-us-form__field-wrapper .required {
+    color:#dd6666;
+}
+
+.mwt-contact-us-form__field-submit-btn {
+  @include gel-typography('pica-bold');
+  color: #211719;
+}
+
+.mwt-module__content--contact-us-details .mwt-contacts-info__email {
+  color: #000000;
+}
+
+@include mq($until: mwt-bp-m) {
+  .mwt-module__content--contact-us-form {
+    padding-bottom: $size-of-human-thumb;
+  }
+}
+
+@include mq($from: mwt-bp-m) {
+  .mwt-module__content--contact-us-form {
+    @include gel-columns(2/4);
+  }
+
+  .mwt-module__content--contact-us-details {
+    @include gel-columns(2/4);
+  }
+
+  .mwt-contact-us-form__field-first-name,
+  .mwt-contact-us-form__field-last-name,
+  .mwt-contact-us-form__field-tel,
+  .mwt-contact-us-form__field-email {
+    @include gel-columns(1/2);
+  }
+}

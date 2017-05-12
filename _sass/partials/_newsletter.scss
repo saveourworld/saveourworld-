@@ -1,0 +1,61 @@
+.mwt-newsletter {
+  background: #b4949a;
+  padding: mwt-spacing(double-spacing-unit) mwt-spacing(base-spacing-unit);
+  text-align: center;
+}
+
+.mwt-newsletter-header__title {
+  @include gel-typography('double-pica');
+  color: #FFFFFF;
+}
+
+.mwt-newsletter-header__memo {
+  color: #f3eeef;
+}
+
+.mwt-newsletter-signup-form {
+  padding-top: mwt-spacing(base-spacing-unit);
+  padding-bottom: mwt-spacing(base-spacing-unit);
+  text-align: center;
+}
+
+.mwt-newsletter-signup-form__field-wrapper {
+  padding-top: mwt-spacing(base-spacing-unit);
+  display: inline-block;
+}
+
+.mwt-newsletter-signup-form__field-wrapper input {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  height: $size-of-human-thumb;
+  padding: mwt-spacing(half-spacing-unit)
+}
+
+.mwt-newsletter-signup-form__submit-btn {
+  @include gel-typography('pica-bold');
+  color: #211719;
+}
+
+.mwt-newsletter-footer__memo {
+  @include gel-typography('brevier');
+  text-align: center;
+  color: #ded0d3;
+}
+
+@include mq($from: mwt-bp-s) {
+  .mwt-newsletter {
+    padding: mwt-spacing(double-spacing-unit);
+  }
+}
+
+@include mq($from: mwt-bp-m) {
+  .mwt-newsletter-signup-form__field-wrapper {
+    @include gel-columns(1/4);
+    max-width: 380px;
+  }
+
+  .mwt-newsletter-signup-form__field-wrapper--btn {
+    @include gel-columns(1/2);
+  }
+}

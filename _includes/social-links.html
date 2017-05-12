@@ -1,0 +1,18 @@
+{% if site.social-links %}
+<section class="mwt-module mwt-social-links">
+  <div class="mwt-module__content">
+	<nav class="mwt-social-links-nav">
+		<h2 class="mwt-social-links-nav__header">Find us elsewhere online</h2>
+		<ul class="mwt-social-links-nav__items mwt-social-links-icons mwt-layout">
+			{% for link in site.social-links %}
+			<li class="mwt-social-links-nav__item mwt-social-links-nav__item--{{ link.icon }} mwt-layout__item">
+				<a class="mwt-social-links-nav__item-link mwt-social-links-nav__item-link--{{ link.icon }}" href="{{ link.url }}">
+					<i class="mwt-social-links-icon fa fa-{{ link.icon }} fa-2x"></i><span class="mwt-social-links-nav__item-link-text">{{ link.label }}</span>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</nav>
+  </div>
+</section>
+{% endif %}

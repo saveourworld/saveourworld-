@@ -1,0 +1,18 @@
+.mwt-module {
+  background: #F3F3EE;
+  box-sizing: border-box;
+}
+
+.mwt-module__content {
+  max-width: 1008px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: mwt-spacing(double-spacing-unit) mwt-spacing(base-spacing-unit);
+}
+
+@include mq($from: mwt-bp-s) {
+  .mwt-module__content {
+    padding-left: mwt-spacing(double-spacing-unit);
+    padding-right: mwt-spacing(double-spacing-unit);
+  }
+}

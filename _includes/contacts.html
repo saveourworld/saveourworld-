@@ -1,0 +1,15 @@
+{% if site.contacts %}
+<div class="mwt-contacts-info__wrapper mwt-layout">
+
+	<div class="mwt-contacts-info mwt-layout__item">
+		<h3 class="mwt-contacts-info_heading">How to contact us</h3>
+	</div>
+
+	{% for contact in site.contacts  %}
+	<div class="mwt-contacts-info_address mwt-layout__item">
+		{% include contact-hcard.html %}
+	</div>
+	{% endfor %}
+
+</div>
+{% endif %}

@@ -1,0 +1,24 @@
+.mwt-site-footer-nav {
+  background: #211719;
+  color: #ffffff;
+}
+
+.mwt-site-footer-nav-menu__items {
+  list-style: none;
+  padding: 0;
+}
+
+.mwt-site-footer-nav-menu__item {
+  display: inline-block;
+  margin-right: mwt-spacing(double-spacing-unit);
+}
+
+.mwt-site-footer-nav-menu__item-link {
+  color: #bb9ea4;
+  text-decoration: none;
+  line-height: $size-of-human-thumb;
+}
+
+.mwt-site-footer-nav-menu__item-link:hover {
+  text-decoration: underline;
+}

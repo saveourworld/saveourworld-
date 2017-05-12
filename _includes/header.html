@@ -1,0 +1,15 @@
+<section class="mwt-module mwt-site-header">
+  <div class="mwt-module__content">
+
+    <div class="mwt-site-header-identity">
+      <{% if page.url=="/" %}h1{% else %}div{% endif %} class="mwt-site-header-logo">
+        <a class="mwt-site-header-logo__title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      </{% if page.url=="/" %}h1{% else %}div{% endif %}>
+    </div>
+
+    {% include donate-btn.html %}
+
+    {% include navigation-header.html %}
+
+  </div>
+</section>

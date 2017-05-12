@@ -1,0 +1,30 @@
+{% capture completed_url %}{{ '/donation-completed/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+{% capture cancelled_url %}{{ '/donation-cancelled/' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+{% capture mwt_logo_url %}{{ '/assets/images/mwt-logo-icon.svg' | prepend: site.baseurl | prepend: site.url }}{% endcapture %}
+
+<form class="mwt-donate-btn-paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="{{ site.paypal.id }}">
+
+    <!-- Specify a Donate button. -->
+    <input type="hidden" name="cmd" value="_donations">
+
+    <!-- Specify details about the contribution -->
+    <input type="hidden" name="item_name" value="{{ site.title }}">
+    <input type="hidden" name="item_number" value="{{ page.title }}">
+    <input type="hidden" name="currency_code" value="GBP">
+    <!--
+    <input type="hidden" name="amount" value="20">
+    -->
+    
+    <!-- Specify details about return from PayPal -->
+    <input type="hidden" name="return" value="{{ completed_url }}">
+    <input type="hidden" name="cancel_return" value="{{ cancelled_url }}">
+
+    <!-- Display the payment button. -->
+    <input type="hidden" name="image_url" value="{{ mwt_logo_url }}">
+    <input type="image" name="submit" border="0" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_cc_147x47.png" alt="PayPal - The safer, easier way to pay online">
+    <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+</form>

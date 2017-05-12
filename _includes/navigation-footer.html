@@ -1,0 +1,17 @@
+{% if site.navigation.footer %}
+<section class="mwt-module mwt-site-footer-nav">
+  <div class="mwt-module__content">
+    
+      <nav class="mwt-site-footer-nav-menu">
+        <ul class="mwt-site-footer-nav-menu__items">
+          {% for nav in site.navigation.footer %}
+          <li class="mwt-site-footer-nav-menu__item mwt-site-footer-nav-menu__item--{{ nav.title | slugify}}">
+            <a class="mwt-site-footer-nav-menu__item-link mwt-site-footer-nav-menu__item-link--{{ nav.title | slugify}} {% if page.url == nav.url %}mwt-site-footer-nav-menu__item-link--curent{% endif %}" href="{{ nav.url }}">{{ nav.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    
+  </div>
+</section>
+{% endif %}

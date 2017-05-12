@@ -1,0 +1,114 @@
+// import Gallery.css
+// @import '../bower_components/gallery/sass/gallery';
+
+$gallery-height-mobile: 320px;
+$gallery-height-tablet: 320px;
+$gallery-height-desktop: 600px;
+
+.mwt-featured-slider {
+  height: 90vh;
+  background-color: rgba(0, 123, 199, 0.6); //#007BC7
+}
+
+.mwt-featured-slider .mwt-module__content {
+  max-width: 100%;
+  padding: 0;
+}
+
+.mwt-featured-slider-header {
+  display: none;
+}
+
+.mwt-slider__slide-link {
+  display: block;
+  position: relative;
+}
+
+.mwt-slider__slide-image {
+  width: 100%;
+  height: 90vh;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.mwt-featured-slider {
+}
+
+.mwt-slider__slide {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.mwt-slider__slide-meta {
+  max-width: 1008px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mwt-slider__slide--info {
+  position: absolute;
+  margin-right: mwt-spacing(base-spacing-unit);
+  bottom: mwt-spacing(base-spacing-unit);
+  left: mwt-spacing(base-spacing-unit);
+}
+
+.mwt-slider__slide--info-category,
+.mwt-slider__slide--info-details {
+  width: auto;
+  color: #FFFFFF;
+  padding: mwt-spacing(base-spacing-unit);
+}
+
+.mwt-slider__slide--info-category {
+  @include gel-typography('minion');
+  display: inline-block;
+  background: rgba(200, 0, 0, 0.7);
+}
+
+.mwt-slider__slide--info-details {
+  display: block;
+  background: rgba(60, 0, 60, 0.6);
+}
+
+.mwt-slider__slide--controls {
+  position: absolute;
+  top: mwt-spacing(base-spacing-unit);
+  right: mwt-spacing(base-spacing-unit);
+}
+
+.mwt-slider__slide--controls-btns {
+  width: ($size-of-human-thumb / 4);
+  height: ($size-of-human-thumb / 4);
+  border: 1px solid #000F8E;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+// setup Gallery
+// @for $i from 2 through 5 {
+//   @include gallery($i);
+// }
+
+@include mq($from: mwt-bp-s) {
+  .mwt-slider__slide--info {
+    margin-right: mwt-spacing(double-spacing-unit);
+    bottom: mwt-spacing(double-spacing-unit);
+    left: mwt-spacing(double-spacing-unit);
+  }
+}
+
+@include mq($from: mwt-bp-m) {
+  .mwt-slider__slide--info {
+    margin-right: mwt-spacing(double-spacing-unit);
+    bottom: double(mwt-spacing(triple-spacing-unit));
+  }
+
+  .mwt-slider__slide--info-category,
+  .mwt-slider__slide--info-details {
+    padding: mwt-spacing(double-spacing-unit);
+  }
+}

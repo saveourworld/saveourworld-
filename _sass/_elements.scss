@@ -1,0 +1,19 @@
+
+blockquote {
+  border-left: 3px solid #493337;
+  padding-left: mwt-spacing(base-spacing-unit);
+  @include gel-typography('double-pica');
+}
+
+blockquote p {
+  padding-top: 0;
+}
+
+blockquote cite {
+  display: block;
+  @include gel-typography('pica');
+}
+
+blockquote cite:before {
+    content: "\2014 \2009";
+}

@@ -1,0 +1,15 @@
+
+{% assign featured_projects = site.featured.projects %}
+{% for project in site.projects %}
+	{% if project.featured == true %}
+		{% assign featured_projects = featured_projects | push: project %}
+	{% endif %}
+{% endfor %}
+
+<div class="mwt-projects mwt-layout">
+	{% for project in featured_projects limit:3 %}
+		{% if project.featured == true %}
+			{% include projects/project.html %}
+		{% endif %}
+	{% endfor %}
+</div>

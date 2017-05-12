@@ -1,0 +1,26 @@
+{
+  "name": "mushtaq-welfare-trust.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mushtaq-welfare-trust/mushtaq-welfare-trust.github.io",
+  "authors": [
+    "Azizur Rahman <azizur@prodevstudio.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#~3.0.3",
+    "gallery": "gallery-css#~1.0.2",
+    "gel-typography": "^2.0.3",
+    "gel-grid": "^2.0.2"
+  }
+}

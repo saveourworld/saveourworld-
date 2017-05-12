@@ -1,1 +1,119 @@
-theme: jekyll-theme-cayman
+# Site settings
+title: Mushtaq Welfare Trust
+email: info@mwt.org.uk
+description: > # this means to ignore newlines until "keywords:"
+ Mushtaq Welfare Trust is the brainchild of a family in Manchester who have set up their own charity and school for orphaned and poverty-stricken girls on the site of their former family home in Khanewal, Pakistan.
+keywords: "Mushtaq Welfare Trust, MWT, Manchester, orphaned, charity, poverty, Khanewal, Pakistan"
+baseurl: "" # the subpath of your site, e.g. /blog/
+#
+url: "http://mwt.org.uk" # the base hostname & protocol for your site
+
+# Featured Content
+featured:
+  projects: [] # we need to set this to an empty array so that we can filter all projects into this empty array
+
+heros: # Featured Slides for homepage
+  - title: Free Education for Orphan and Needy Girls
+    category: Education
+    url: /projects/school-maintenance-and-education/
+    images:
+      small: /assets/images/heros/hero-1.jpg
+      medium: /assets/images/heros/hero-1.jpg
+      large: /assets/images/heros/hero-1.jpg
+
+social-links:
+  - label: Follow us on Twitter
+    url: https://twitter.com/mushtaqwelfare
+    icon: twitter
+  - label: Follow us on Google+
+    url: https://plus.google.com/117010213420881014098
+    icon: google
+  - label: Like us on Facebook
+    url: https://www.facebook.com/Mushtaq-Welfare-Trust-457607101003001/
+    icon: facebook
+  - label: Watch, Share and Subscribe on YouTube
+    url: https://www.youtube.com/channel/UCecGYoHjTRTo4-OeThF7BQg
+    icon: youtube
+
+# charity commission registration
+charitycommission:
+  charityNo: 1115506
+  companyNo: 5571956
+
+contacts:
+  -
+    location: UK
+    org: Mushtaq Welfare Trust
+    tel: +44 788 524 2147
+    email: info@mwt.org.uk
+    # address:
+    #   street: 98 Milwain Road
+    #   city: Manchester
+    #   postcode: M19 2PR
+  -
+    location: Pakistan
+    org: Mushtaq Girls School
+    email: info@mwt.org.uk
+    tel: +92 652 552 600
+    address:
+      street: AAN Plaza, Block 7, Lane 6
+      city: Khanewal
+      country: Pakistan
+
+
+# PayPal Merchant account ID
+# see https://www.paypal.com/webapps/customerprofile/summary.view
+paypal:
+  id: TU8Z3DGEVDY8Y #refers to the donation button
+
+# navigation settings
+navigation:
+  header:
+    - title: Home
+      url: /
+    - title: About us
+      url: /about-us/
+    - title: Projects
+      url: /projects/
+      nav: 'site.projects'
+    # - title: Get Involved
+      # url: /get-involved/
+    # - title: Donate
+      # url: /donate/
+    - title: Contact us
+      url: /contact-us/
+  footer:
+    - title: About us
+      url: /about-us/
+    - title: Terms of Service
+      url: /terms/
+    - title: Privacy
+      url: /privacy/
+    - title: Contact us
+      url: /contact-us/
+
+# Do not modify below this line unless you know what you are doing
+
+# Build settings
+markdown: kramdown
+permalink: 'pretty'
+include: ['_pages', '_projects', '.htaccess']
+exclude: ['Gemfile', 'Gemfile.lock', 'node_modules', 'bower_components', 'package.json', 'bower.json' ,'Gruntfile.js', 'readme.md', 'vendor']
+
+collections:
+  projects:
+    output: true
+    title: Projects
+    permalink: /projects/:path/
+
+sass:
+    style: compressed
+    sourcemap: true
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: []
+  profile: false
+  ignore:
+    envs: []
